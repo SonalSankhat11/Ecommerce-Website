@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Space | TRENDCART</title>
+    <meta name="description" content="Sign in or register for a TRENDCART profile. Track recent order shipping codes, save seasonal catalogs, and manage styling bookings.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-trendcart">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-trendcart" href="index.html">TRENDCART</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="products.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="navbar-icons">
+                    <a href="dashboard.html" class="nav-icon-btn" title="View Wishlist">
+                        <i class="bi bi-heart"></i>
+                        <span class="nav-icon-badge wishlist-count-badge" style="display: none;">0</span>
+                    </a>
+                    <button class="nav-icon-btn" id="navbar-cart-btn" title="Open Bag">
+                        <i class="bi bi-bag"></i>
+                        <span class="nav-icon-badge cart-count-badge" style="display: none;">0</span>
+                    </button>
+                    <a href="auth.html" class="nav-icon-btn active" id="navbar-user-btn" title="Sign In">
+                        <i class="bi bi-person"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header (Shortened) -->
+    <header class="page-header" style="padding-bottom: 2rem;">
+        <div class="container">
+            <h1 class="page-title" style="font-size: 2.2rem;">Account Space</h1>
+            <div class="page-breadcrumbs">
+                <a href="index.html">Home</a> / <span>Authentication</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Authentication Split Box Section -->
+    <section class="py-5" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="auth-panel-container">
+                <div class="row g-0">
+                    
+                    <!-- Left Hero Image Side -->
+                    <div class="col-lg-6 auth-hero-side d-none d-lg-flex" style="background-image: url('assets/images/hero.png');">
+                        <div class="auth-hero-overlay"></div>
+                        <div class="position-relative z-2">
+                            <h2 class="font-heading mb-3 text-uppercase fs-1">TRENDCART</h2>
+                            <p class="small text-muted mb-0 letter-spacing-1 text-uppercase">Exclusive Customer Atelier Access</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Form Side -->
+                    <div class="col-lg-6 auth-form-side">
+                        <!-- Tab controllers -->
+                        <div class="auth-nav-tabs">
+                            <button class="auth-tab-btn active" id="tab-login">Sign In</button>
+                            <button class="auth-tab-btn" id="tab-register">Register</button>
+                        </div>
+
+                        <!-- Login Panel -->
+                        <div class="auth-panel-content animate-fade-in-up" id="panel-login">
+                            <h3 class="h4 font-weight-bold mb-4 text-uppercase letter-spacing-1">Welcome Back</h3>
+                            
+                            <form id="login-form" novalidate>
+                                <div class="mb-3">
+                                    <label for="login-email" class="form-label small text-uppercase font-weight-bold text-muted">Email Address</label>
+                                    <input type="email" class="form-control form-control-trendcart shadow-none" id="login-email" required>
+                                    <div class="invalid-feedback">Please provide a valid account email.</div>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <label for="login-pass" class="form-label small text-uppercase font-weight-bold text-muted mb-0">Password</label>
+                                        <a href="#" class="auth-forgot-link small" onclick="event.preventDefault(); showToast('Demo Mode: Try entering any password.');">Forgot Password?</a>
+                                    </div>
+                                    <input type="password" class="form-control form-control-trendcart shadow-none" id="login-pass" required>
+                                    <div class="invalid-feedback">Please enter your account password.</div>
+                                </div>
+                                <button type="submit" class="btn btn-trendcart w-100 py-3">Sign In</button>
+                            </form>
+                            
+                            <div class="mt-4 pt-3 border-top text-center">
+                                <p class="small text-muted mb-0"><strong>Test Account:</strong> email: <code>priya.patel@gmail.com</code> / pass: <code>password123</code></p>
+                            </div>
+                        </div>
+
+                        <!-- Register Panel -->
+                        <div class="auth-panel-content d-none" id="panel-register">
+                            <h3 class="h4 font-weight-bold mb-4 text-uppercase letter-spacing-1">Create Account</h3>
+                            
+                            <form id="register-form" novalidate>
+                                <div class="mb-3">
+                                    <label for="reg-name" class="form-label small text-uppercase font-weight-bold text-muted">Full Name</label>
+                                    <input type="text" class="form-control form-control-trendcart shadow-none" id="reg-name" required>
+                                    <div class="invalid-feedback">Please enter your full name.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="reg-email" class="form-label small text-uppercase font-weight-bold text-muted">Email Address</label>
+                                    <input type="email" class="form-control form-control-trendcart shadow-none" id="reg-email" required>
+                                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="reg-pass" class="form-label small text-uppercase font-weight-bold text-muted">Password</label>
+                                    <input type="password" class="form-control form-control-trendcart shadow-none" id="reg-pass" placeholder="Min. 6 characters" required>
+                                    <div class="invalid-feedback">Password is too short.</div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="reg-confirm" class="form-label small text-uppercase font-weight-bold text-muted">Confirm Password</label>
+                                    <input type="password" class="form-control form-control-trendcart shadow-none" id="reg-confirm" required>
+                                    <div class="invalid-feedback">Passwords must match.</div>
+                                </div>
+                                <button type="submit" class="btn btn-trendcart w-100 py-3">Register Account</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-trendcart">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-12">
+                    <h3 class="footer-logo">TRENDCART</h3>
+                    <p class="footer-subtitle">Providing curated slow fashion luxury collections for modern individuals. Focused on natural fabrics, conscious sourcing, and classic styles.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon-btn" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+                        <a href="#" class="social-icon-btn" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="index.html">Home</a></li>
+                        <li class="footer-link-item"><a href="products.html">Shop Catalog</a></li>
+                        <li class="footer-link-item"><a href="services.html">Services</a></li>
+                        <li class="footer-link-item"><a href="about.html">Our Story</a></li>
+                        <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h4 class="footer-title">Help Desk</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="contact.html#faq">FAQs</a></li>
+                        <li class="footer-link-item"><a href="#">Shipping & Deliveries</a></li>
+                        <li class="footer-link-item"><a href="#">Return Policy</a></li>
+                        <li class="footer-link-item"><a href="#">Sizing Guides</a></li>
+                        <li class="footer-link-item"><a href="#">Privacy Settings</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h4 class="footer-title">The Atelier</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><span class="text-muted">Office: C.G. Road, Navrangpura, Ahmedabad, Gujarat 380009</span></li>
+                        <li class="footer-link-item"><span class="text-muted">Hotline: +91 98765 43210</span></li>
+                        <li class="footer-link-item"><span class="text-muted">Email: support@trendcart.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright-text mb-0">&copy; 2026 TRENDCART India. All Rights Reserved.</p>
+                <div class="payment-gateways" title="Supported Payments">
+                    <i class="bi bi-credit-card-2-front" title="Card"></i>
+                    <i class="bi bi-wallet2" title="Apple Pay"></i>
+                    <i class="bi bi-paypal" title="PayPal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Cart Drawer Overlay -->
+    <div class="cart-drawer-overlay"></div>
+
+    <!-- Slide-out Cart Drawer Panel -->
+    <div class="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3 class="cart-drawer-title">Shopping Bag</h3>
+            <button class="cart-drawer-close" aria-label="Close cart drawer"><i class="bi bi-x"></i></button>
+        </div>
+        <div class="cart-drawer-body">
+            <div class="cart-drawer-list">
+                <!-- Rendered dynamically in main.js -->
+            </div>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-total-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">₹0.00</span>
+            </div>
+            <button class="btn btn-trendcart w-100 py-3" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 Bundle JS (Contains Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Config JS -->
+    <script src="js/config.js"></script>
+    <!-- Core JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

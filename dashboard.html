@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | TRENDCART</title>
+    <meta name="description" content="Manage your TRENDCART account, review shipping states, update details, and view your catalog favorites.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-trendcart">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-trendcart" href="index.html">TRENDCART</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="products.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="navbar-icons">
+                    <a href="dashboard.html" class="nav-icon-btn" title="View Wishlist">
+                        <i class="bi bi-heart"></i>
+                        <span class="nav-icon-badge wishlist-count-badge" style="display: none;">0</span>
+                    </a>
+                    <button class="nav-icon-btn" id="navbar-cart-btn" title="Open Bag">
+                        <i class="bi bi-bag"></i>
+                        <span class="nav-icon-badge cart-count-badge" style="display: none;">0</span>
+                    </button>
+                    <a href="auth.html" class="nav-icon-btn active" id="navbar-user-btn" title="Sign In">
+                        <i class="bi bi-person"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header (Dashboard Short version) -->
+    <header class="page-header" style="padding-bottom: 2rem;">
+        <div class="container">
+            <h1 class="page-title" style="font-size: 2.2rem;">Customer Space</h1>
+            <div class="page-breadcrumbs">
+                <a href="index.html">Home</a> / <span>Dashboard</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Layout Section -->
+    <section id="dashboard-root">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                
+                <!-- Left Sidebar Nav Panel (col-lg-3) -->
+                <div class="col-lg-3">
+                    <div class="dashboard-sidebar">
+                        
+                        <!-- User Card -->
+                        <div class="dashboard-user-card">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="User Profile" class="dashboard-avatar">
+                            <h4 class="h5 font-weight-bold mb-1 user-fullname">Loading Name...</h4>
+                            <span class="text-accent small user-email">Loading Email...</span>
+                        </div>
+
+                        <!-- Sidebar Links -->
+                        <ul class="dashboard-nav-list">
+                            <li class="dashboard-nav-item">
+                                <a class="dashboard-nav-link active" data-target="panel-overview">
+                                    <i class="bi bi-grid"></i> <span>Overview</span>
+                                </a>
+                            </li>
+                            <li class="dashboard-nav-item">
+                                <a class="dashboard-nav-link" data-target="panel-orders">
+                                    <i class="bi bi-receipt"></i> <span>My Orders</span>
+                                </a>
+                            </li>
+                            <li class="dashboard-nav-item">
+                                <a class="dashboard-nav-link" data-target="panel-wishlist">
+                                    <i class="bi bi-heart"></i> <span>Wishlist</span>
+                                </a>
+                            </li>
+                            <li class="dashboard-nav-item">
+                                <a class="dashboard-nav-link" data-target="panel-settings">
+                                    <i class="bi bi-sliders"></i> <span>Settings</span>
+                                </a>
+                            </li>
+                            <li class="dashboard-nav-item mt-4 pt-3 border-top">
+                                <a class="dashboard-nav-link text-danger" id="dashboard-logout-btn">
+                                    <i class="bi bi-box-arrow-right"></i> <span>Log Out</span>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+
+                <!-- Right Dashboard Panel Content (col-lg-9) -->
+                <div class="col-lg-9">
+                    <div class="dashboard-content-panel">
+                        
+                        <!-- 1. Panel Overview -->
+                        <div class="dashboard-panel animate-fade-in-up" id="panel-overview">
+                            <h2 class="h3 text-uppercase font-weight-bold mb-4 letter-spacing-1">Account Overview</h2>
+                            <p class="text-muted small">Welcome to your dashboard space, <strong class="user-fullname">Client</strong>. Manage orders, billing info, and saved wishlists.</p>
+                            
+                            <!-- Stats Boxes -->
+                            <div class="row g-4 mt-2 mb-4">
+                                <div class="col-12 col-md-4">
+                                    <div class="dashboard-card p-4 text-center">
+                                        <span class="text-muted text-uppercase small font-weight-bold d-block mb-2">Tier Level</span>
+                                        <h3 class="h4 text-accent text-uppercase font-weight-bold m-0">Gold Member</h3>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="dashboard-card p-4 text-center">
+                                        <span class="text-muted text-uppercase small font-weight-bold d-block mb-2">Shipping Code</span>
+                                        <h3 class="h4 text-accent text-uppercase font-weight-bold m-0">Standard Express</h3>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="dashboard-card p-4 text-center">
+                                        <span class="text-muted text-uppercase small font-weight-bold d-block mb-2">Member Since</span>
+                                        <h3 class="h4 text-accent text-uppercase font-weight-bold m-0">August 2026</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card mt-4">
+                                <h3 class="h5 text-uppercase font-weight-bold mb-3 letter-spacing-1">Personal Shopper Note</h3>
+                                <p class="text-muted small mb-0">"Hello Priya, based on your preference for earth tones and soft beige styles, we highly recommend viewing the new Classic Beige Trench Coat. Feel free to book a custom tailoring slot to adjust your waist belt sizing."</p>
+                            </div>
+                        </div>
+
+                        <!-- 2. Panel Orders -->
+                        <div class="dashboard-panel d-none animate-fade-in-up" id="panel-orders">
+                            <h2 class="h3 text-uppercase font-weight-bold mb-4 letter-spacing-1">My Orders</h2>
+                            <div id="orders-history-container">
+                                <!-- Loaded dynamically in main.js -->
+                            </div>
+                        </div>
+
+                        <!-- 3. Panel Wishlist -->
+                        <div class="dashboard-panel d-none animate-fade-in-up" id="panel-wishlist">
+                            <h2 class="h3 text-uppercase font-weight-bold mb-4 letter-spacing-1">My Wishlist</h2>
+                            <div class="row g-3" id="wishlist-items-container">
+                                <!-- Loaded dynamically in main.js -->
+                            </div>
+                        </div>
+
+                        <!-- 4. Panel Settings -->
+                        <div class="dashboard-panel d-none animate-fade-in-up" id="panel-settings">
+                            <h2 class="h3 text-uppercase font-weight-bold mb-4 letter-spacing-1">Profile Settings</h2>
+                            
+                            <div class="dashboard-card">
+                                <form id="profile-settings-form">
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-md-6">
+                                            <label for="profile-name" class="form-label small text-uppercase font-weight-bold text-muted">Full Name</label>
+                                            <input type="text" class="form-control form-control-trendcart shadow-none" id="profile-name" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="profile-email" class="form-label small text-uppercase font-weight-bold text-muted">Email Address</label>
+                                            <input type="email" class="form-control form-control-trendcart shadow-none" id="profile-email" required>
+                                        </div>
+                                    </div>
+                                    <div class="row g-3 mb-4">
+                                        <div class="col-md-6">
+                                            <label for="profile-pass" class="form-label small text-uppercase font-weight-bold text-muted">New Password (Optional)</label>
+                                            <input type="password" class="form-control form-control-trendcart shadow-none" id="profile-pass" placeholder="Enter new password">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="profile-confirm" class="form-label small text-uppercase font-weight-bold text-muted">Confirm New Password</label>
+                                            <input type="password" class="form-control form-control-trendcart shadow-none" id="profile-confirm" placeholder="Confirm new password">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-trendcart py-3 px-4">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-trendcart">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-12">
+                    <h3 class="footer-logo">TRENDCART</h3>
+                    <p class="footer-subtitle">Providing curated slow fashion luxury collections for modern individuals. Focused on natural fabrics, conscious sourcing, and classic styles.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon-btn" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+                        <a href="#" class="social-icon-btn" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="index.html">Home</a></li>
+                        <li class="footer-link-item"><a href="products.html">Shop Catalog</a></li>
+                        <li class="footer-link-item"><a href="services.html">Services</a></li>
+                        <li class="footer-link-item"><a href="about.html">Our Story</a></li>
+                        <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h4 class="footer-title">Help Desk</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="contact.html#faq">FAQs</a></li>
+                        <li class="footer-link-item"><a href="#">Shipping & Deliveries</a></li>
+                        <li class="footer-link-item"><a href="#">Return Policy</a></li>
+                        <li class="footer-link-item"><a href="#">Sizing Guides</a></li>
+                        <li class="footer-link-item"><a href="#">Privacy Settings</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h4 class="footer-title">The Atelier</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><span class="text-muted">Office: C.G. Road, Navrangpura, Ahmedabad, Gujarat 380009</span></li>
+                        <li class="footer-link-item"><span class="text-muted">Hotline: +91 98765 43210</span></li>
+                        <li class="footer-link-item"><span class="text-muted">Email: support@trendcart.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright-text mb-0">&copy; 2026 TRENDCART India. All Rights Reserved.</p>
+                <div class="payment-gateways" title="Supported Payments">
+                    <i class="bi bi-credit-card-2-front" title="Card"></i>
+                    <i class="bi bi-wallet2" title="Apple Pay"></i>
+                    <i class="bi bi-paypal" title="PayPal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Cart Drawer Overlay -->
+    <div class="cart-drawer-overlay"></div>
+
+    <!-- Slide-out Cart Drawer Panel -->
+    <div class="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3 class="cart-drawer-title">Shopping Bag</h3>
+            <button class="cart-drawer-close" aria-label="Close cart drawer"><i class="bi bi-x"></i></button>
+        </div>
+        <div class="cart-drawer-body">
+            <div class="cart-drawer-list">
+                <!-- Rendered dynamically in main.js -->
+            </div>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-total-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">₹0.00</span>
+            </div>
+            <button class="btn btn-trendcart w-100 py-3" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 Bundle JS (Contains Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Config JS -->
+    <script src="js/config.js"></script>
+    <!-- Core JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Services | TRENDCART</title>
+    <meta name="description" content="Explore TRENDCART bespoke styling services, personal shopping consults, custom tailoring, and sustainable trade-in schemes. Book online.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-trendcart">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-trendcart" href="index.html">TRENDCART</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="products.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart active" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="navbar-icons">
+                    <a href="dashboard.html" class="nav-icon-btn" title="View Wishlist">
+                        <i class="bi bi-heart"></i>
+                        <span class="nav-icon-badge wishlist-count-badge" style="display: none;">0</span>
+                    </a>
+                    <button class="nav-icon-btn" id="navbar-cart-btn" title="Open Bag">
+                        <i class="bi bi-bag"></i>
+                        <span class="nav-icon-badge cart-count-badge" style="display: none;">0</span>
+                    </button>
+                    <a href="auth.html" class="nav-icon-btn" id="navbar-user-btn" title="Sign In">
+                        <i class="bi bi-person"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Brand Services</h1>
+            <div class="page-breadcrumbs">
+                <a href="index.html">Home</a> / <span>Services</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Details Section -->
+    <section class="py-5 my-lg-4">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <!-- Service 1 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="p-4 border text-center h-100 d-flex flex-column justify-content-between" style="background-color: var(--bg-white);">
+                        <div>
+                            <div class="fs-1 text-accent mb-3"><i class="bi bi-chat-quote"></i></div>
+                            <h3 class="h5 text-uppercase font-weight-bold letter-spacing-1 mb-3">Styling Consultation</h3>
+                            <p class="text-muted small mb-0">Book a 45-minute virtual or in-atelier session with our styling advisors to construct a personalized seasonal capsule wardrobe.</p>
+                        </div>
+                        <span class="text-accent small font-weight-bold text-uppercase d-block mt-4">Complimentary</span>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="p-4 border text-center h-100 d-flex flex-column justify-content-between" style="background-color: var(--bg-white);">
+                        <div>
+                            <div class="fs-1 text-accent mb-3"><i class="bi bi-scissors"></i></div>
+                            <h3 class="h5 text-uppercase font-weight-bold letter-spacing-1 mb-3">Custom Tailoring</h3>
+                            <p class="text-muted small mb-0">Ensure the perfect silhouette. We provide in-house alterations, hem adjustments, and sizing optimizations on any TRENDCART garment.</p>
+                        </div>
+                        <span class="text-accent small font-weight-bold text-uppercase d-block mt-4">From ₹1,600.00</span>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="p-4 border text-center h-100 d-flex flex-column justify-content-between" style="background-color: var(--bg-white);">
+                        <div>
+                            <div class="fs-1 text-accent mb-3"><i class="bi bi-recycle"></i></div>
+                            <h3 class="h5 text-uppercase font-weight-bold letter-spacing-1 mb-3">Sustainable Exchange</h3>
+                            <p class="text-muted small mb-0">Return your pre-loved, worn TRENDCART pieces in exchange for store credit. We restore, dye, and re-release them under our archive collections.</p>
+                        </div>
+                        <span class="text-accent small font-weight-bold text-uppercase d-block mt-4">Credit reward</span>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="p-4 border text-center h-100 d-flex flex-column justify-content-between" style="background-color: var(--bg-white);">
+                        <div>
+                            <div class="fs-1 text-accent mb-3"><i class="bi bi-gem"></i></div>
+                            <h3 class="h5 text-uppercase font-weight-bold letter-spacing-1 mb-3">Bridal / Private Suite</h3>
+                            <p class="text-muted small mb-0">Exclusive access to our private viewing chamber. Accommodates bridal party fitting, luxury fabric samples, and private cocktail services.</p>
+                        </div>
+                        <span class="text-accent small font-weight-bold text-uppercase d-block mt-4">By Appointment Only</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="py-5" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <span class="text-accent text-uppercase small letter-spacing-2 font-weight-bold d-block mb-3">Atelier Schedule</span>
+                    <h2 class="mb-4 display-6 text-uppercase font-weight-bold" style="line-height: 1.2;">Schedule Your Styling Experience</h2>
+                    <p class="text-muted mb-4">Let our style advisors help you curate products that match your silhouette and personality. Choose a time slot, specify whether it's virtual or in-person (Ahmedabad Atelier), and select your desired service.</p>
+                    
+                    <div class="mt-4 pt-3 border-top">
+                        <p class="small mb-1"><i class="bi bi-info-circle text-accent me-2"></i><strong>Atelier Address:</strong> C.G. Road, Navrangpura, Ahmedabad, Gujarat 380009, India</p>
+                        <p class="small"><i class="bi bi-clock text-accent me-2"></i><strong>Hours:</strong> Mon - Sat: 10:00 AM - 7:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="p-4 p-md-5 bg-white shadow-sm">
+                        <h4 class="text-uppercase small font-weight-bold mb-4 letter-spacing-1">Consultation Request Form</h4>
+                        
+                        <form id="booking-form" novalidate>
+                            <div class="mb-3">
+                                <label for="book-name" class="form-label small text-uppercase font-weight-bold text-muted">Your Name</label>
+                                <input type="text" class="form-control form-control-trendcart shadow-none" id="book-name" required>
+                                <div class="invalid-feedback">Please enter your name.</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="book-email" class="form-label small text-uppercase font-weight-bold text-muted">Email Address</label>
+                                <input type="email" class="form-control form-control-trendcart shadow-none" id="book-email" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                            
+                            <div class="row g-3 mb-3">
+                                <div class="col-6">
+                                    <label for="book-date" class="form-label small text-uppercase font-weight-bold text-muted">Date</label>
+                                    <input type="date" class="form-control form-control-trendcart shadow-none" id="book-date" required>
+                                    <div class="invalid-feedback">Select a date.</div>
+                                </div>
+                                <div class="col-6">
+                                    <label for="book-time" class="form-label small text-uppercase font-weight-bold text-muted">Time Slot</label>
+                                    <select class="form-select form-control-trendcart shadow-none" id="book-time" required>
+                                        <option value="" selected disabled>Select Time</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:30">11:30 AM</option>
+                                        <option value="13:30">1:30 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:30">4:30 PM</option>
+                                    </select>
+                                    <div class="invalid-feedback">Select a time slot.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="book-service" class="form-label small text-uppercase font-weight-bold text-muted">Service Required</label>
+                                <select class="form-select form-control-trendcart shadow-none" id="book-service" required>
+                                    <option value="" selected disabled>Select Service</option>
+                                    <option value="virtual">Virtual Styling Consultation (Complimentary)</option>
+                                    <option value="inperson">In-Atelier Styling Session (Complimentary)</option>
+                                    <option value="tailoring">Garment Alteration Fitting</option>
+                                    <option value="bridal">Private Suite Booking</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a service.</div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-trendcart w-100 py-3">Submit Booking</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-trendcart">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-12">
+                    <h3 class="footer-logo">TRENDCART</h3>
+                    <p class="footer-subtitle">Providing curated slow fashion luxury collections for modern individuals. Focused on natural fabrics, conscious sourcing, and classic styles.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon-btn" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+                        <a href="#" class="social-icon-btn" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="index.html">Home</a></li>
+                        <li class="footer-link-item"><a href="products.html">Shop Catalog</a></li>
+                        <li class="footer-link-item"><a href="services.html">Services</a></li>
+                        <li class="footer-link-item"><a href="about.html">Our Story</a></li>
+                        <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h4 class="footer-title">Help Desk</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="contact.html#faq">FAQs</a></li>
+                        <li class="footer-link-item"><a href="#">Shipping & Deliveries</a></li>
+                        <li class="footer-link-item"><a href="#">Return Policy</a></li>
+                        <li class="footer-link-item"><a href="#">Sizing Guides</a></li>
+                        <li class="footer-link-item"><a href="#">Privacy Settings</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h4 class="footer-title">The Atelier</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><span class="text-muted">Office: C.G. Road, Navrangpura, Ahmedabad, Gujarat 380009</span></li>
+                        <li class="footer-link-item"><span class="text-muted">Hotline: +91 98765 43210</span></li>
+                        <li class="footer-link-item"><span class="text-muted">Email: support@trendcart.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright-text mb-0">&copy; 2026 TRENDCART India. All Rights Reserved.</p>
+                <div class="payment-gateways" title="Supported Payments">
+                    <i class="bi bi-credit-card-2-front" title="Card"></i>
+                    <i class="bi bi-wallet2" title="Apple Pay"></i>
+                    <i class="bi bi-paypal" title="PayPal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Cart Drawer Overlay -->
+    <div class="cart-drawer-overlay"></div>
+
+    <!-- Slide-out Cart Drawer Panel -->
+    <div class="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3 class="cart-drawer-title">Shopping Bag</h3>
+            <button class="cart-drawer-close" aria-label="Close cart drawer"><i class="bi bi-x"></i></button>
+        </div>
+        <div class="cart-drawer-body">
+            <div class="cart-drawer-list">
+                <!-- Rendered dynamically in main.js -->
+            </div>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-total-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">₹0.00</span>
+            </div>
+            <button class="btn btn-trendcart w-100 py-3" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 Bundle JS (Contains Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Config JS -->
+    <script src="js/config.js"></script>
+    <!-- Core JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

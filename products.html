@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Collections | TRENDCART</title>
+    <meta name="description" content="Browse TRENDCART premium clothing line for men and women. Trench coats, blazers, knitwear, leather jackets, boots, and luxury accessories.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-trendcart">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-trendcart" href="index.html">TRENDCART</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart active" href="products.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="navbar-icons">
+                    <a href="dashboard.html" class="nav-icon-btn" title="View Wishlist">
+                        <i class="bi bi-heart"></i>
+                        <span class="nav-icon-badge wishlist-count-badge" style="display: none;">0</span>
+                    </a>
+                    <button class="nav-icon-btn" id="navbar-cart-btn" title="Open Bag">
+                        <i class="bi bi-bag"></i>
+                        <span class="nav-icon-badge cart-count-badge" style="display: none;">0</span>
+                    </button>
+                    <a href="auth.html" class="nav-icon-btn" id="navbar-user-btn" title="Sign In">
+                        <i class="bi bi-person"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Shop Collection</h1>
+            <div class="page-breadcrumbs">
+                <a href="index.html">Home</a> / <span>Shop</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Catalog Content Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                
+                <!-- Left Sidebar Filters (col-lg-3) -->
+                <div class="col-lg-3">
+                    <div class="filter-sidebar">
+                        
+                        <!-- Search Widget -->
+                        <div class="filter-widget">
+                            <h4 class="filter-title">Search</h4>
+                            <input type="text" class="search-widget-input" id="product-search" placeholder="Type keywords...">
+                        </div>
+
+                        <!-- Categories Widget -->
+                        <div class="filter-widget">
+                            <h4 class="filter-title">Categories</h4>
+                            <ul class="filter-list">
+                                <li class="filter-list-item">
+                                    <a href="#" class="filter-link category-filter-link active" data-category="all">
+                                        <span>All Products</span>
+                                    </a>
+                                </li>
+                                <li class="filter-list-item">
+                                    <a href="#" class="filter-link category-filter-link" data-category="women">
+                                        <span>Women's Collection</span>
+                                    </a>
+                                </li>
+                                <li class="filter-list-item">
+                                    <a href="#" class="filter-link category-filter-link" data-category="men">
+                                        <span>Men's Collection</span>
+                                    </a>
+                                </li>
+                                <li class="filter-list-item">
+                                    <a href="#" class="filter-link category-filter-link" data-category="accessories">
+                                        <span>Accessories</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Article Type Widget -->
+                        <div class="filter-widget">
+                            <h4 class="filter-title">Article Type</h4>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input type-filter-checkbox rounded-0 shadow-none border-dark" type="checkbox" value="apparel" id="type-apparel">
+                                <label class="form-check-label small text-uppercase" for="type-apparel">Apparel</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input type-filter-checkbox rounded-0 shadow-none border-dark" type="checkbox" value="footwear" id="type-footwear">
+                                <label class="form-check-label small text-uppercase" for="type-footwear">Footwear</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input type-filter-checkbox rounded-0 shadow-none border-dark" type="checkbox" value="accessories" id="type-acc">
+                                <label class="form-check-label small text-uppercase" for="type-acc">Bags & Watches</label>
+                            </div>
+                        </div>
+
+                        <!-- Price Limit Widget -->
+                        <div class="filter-widget">
+                            <h4 class="filter-title">Filter by Price</h4>
+                            <input type="range" class="form-range price-range-slider" min="1000" max="40000" step="1000" value="40000" id="price-range">
+                            <div class="d-flex justify-content-between mt-2">
+                                <span class="small text-muted">Max Price:</span>
+                                <span class="small font-weight-bold text-accent" id="price-range-val">₹40,000.00</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Right Grid Section (col-lg-9) -->
+                <div class="col-lg-9">
+                    <!-- Sort and count panel -->
+                    <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom flex-wrap gap-2">
+                        <span class="small text-muted">Curated Selection</span>
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="small text-uppercase font-weight-bold text-muted" style="font-size: 0.75rem;">Sort By:</span>
+                            <select class="form-select form-control-trendcart py-1 px-3 shadow-none text-uppercase small" style="width: auto; min-width: 150px; font-size: 0.75rem; font-weight: 600;" id="sort-select">
+                                <option value="newest" selected>New Arrivals</option>
+                                <option value="low-high">Price: Low to High</option>
+                                <option value="high-low">Price: High to Low</option>
+                                <option value="rating">Customer Rating</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid Container -->
+                    <div class="row g-4" id="products-grid">
+                        <!-- Loaded dynamically via js/main.js -->
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-trendcart">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-12">
+                    <h3 class="footer-logo">TRENDCART</h3>
+                    <p class="footer-subtitle">Providing curated slow fashion luxury collections for modern individuals. Focused on natural fabrics, conscious sourcing, and classic styles.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon-btn" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+                        <a href="#" class="social-icon-btn" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="index.html">Home</a></li>
+                        <li class="footer-link-item"><a href="products.html">Shop Catalog</a></li>
+                        <li class="footer-link-item"><a href="services.html">Services</a></li>
+                        <li class="footer-link-item"><a href="about.html">Our Story</a></li>
+                        <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h4 class="footer-title">Help Desk</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="contact.html#faq">FAQs</a></li>
+                        <li class="footer-link-item"><a href="#">Shipping & Deliveries</a></li>
+                        <li class="footer-link-item"><a href="#">Return Policy</a></li>
+                        <li class="footer-link-item"><a href="#">Sizing Guides</a></li>
+                        <li class="footer-link-item"><a href="#">Privacy Settings</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h4 class="footer-title">The Atelier</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><span class="text-muted">Office: C.G. Road, Navrangpura, Ahmedabad, Gujarat 380009</span></li>
+                        <li class="footer-link-item"><span class="text-muted">Hotline: +91 98765 43210</span></li>
+                        <li class="footer-link-item"><span class="text-muted">Email: support@trendcart.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright-text mb-0">&copy; 2026 TRENDCART India. All Rights Reserved.</p>
+                <div class="payment-gateways" title="Supported Payments">
+                    <i class="bi bi-credit-card-2-front" title="Card"></i>
+                    <i class="bi bi-wallet2" title="Apple Pay"></i>
+                    <i class="bi bi-paypal" title="PayPal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Cart Drawer Overlay -->
+    <div class="cart-drawer-overlay"></div>
+
+    <!-- Slide-out Cart Drawer Panel -->
+    <div class="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3 class="cart-drawer-title">Shopping Bag</h3>
+            <button class="cart-drawer-close" aria-label="Close cart drawer"><i class="bi bi-x"></i></button>
+        </div>
+        <div class="cart-drawer-body">
+            <div class="cart-drawer-list">
+                <!-- Rendered dynamically in main.js -->
+            </div>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-total-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">₹0.00</span>
+            </div>
+            <button class="btn btn-trendcart w-100 py-3" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 Bundle JS (Contains Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Config JS -->
+    <script src="js/config.js"></script>
+    <!-- Core JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

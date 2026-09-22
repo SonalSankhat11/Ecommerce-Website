@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | TRENDCART</title>
+    <meta name="description" content="Complete your TRENDCART purchase securely with fast delivery options.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .checkout-stepper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .checkout-stepper::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #e0e0e0;
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+        .checkout-stepper-progress {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 2px;
+            background: var(--accent-color, #111);
+            z-index: 2;
+            transform: translateY(-50%);
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+        .step-item {
+            position: relative;
+            z-index: 3;
+            background: #fff;
+            padding: 0 10px;
+            text-align: center;
+        }
+        .step-circle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin: 0 auto 6px;
+            color: #777;
+            transition: all 0.3s ease;
+        }
+        .step-item.active .step-circle {
+            border-color: var(--accent-color, #111);
+            background: var(--accent-color, #111);
+            color: #fff;
+        }
+        .step-item.completed .step-circle {
+            border-color: var(--accent-color, #111);
+            background: var(--accent-color, #111);
+            color: #fff;
+        }
+        .step-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: #777;
+        }
+        .step-item.active .step-label,
+        .step-item.completed .step-label {
+            color: var(--accent-color, #111);
+        }
+        .payment-option-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 1rem;
+        }
+        .payment-option-card:hover {
+            border-color: #111;
+        }
+        .payment-option-card.selected {
+            border-color: var(--accent-color, #111);
+            background-color: rgba(0,0,0,0.02);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .summary-card {
+            background: #fafafa;
+            border: 1px solid #eee;
+            padding: 1.5rem;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body style="padding-top: 80px;">
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-trendcart">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-trendcart" href="index.html">TRENDCART</a>
+            
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-trendcart">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Catalog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <a href="auth.html" class="navbar-action-btn" id="navbar-user-btn" title="Account">
+                        <i class="bi bi-person"></i>
+                    </a>
+                    <button class="navbar-action-btn position-relative" id="navbar-cart-btn" title="Bag">
+                        <i class="bi bi-bag"></i>
+                        <span class="cart-count-badge" style="display: none;">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="py-4 bg-light border-bottom mb-4">
+        <div class="container text-center">
+            <h1 class="h3 font-heading font-weight-bold mb-1 text-uppercase letter-spacing-1">Secure Checkout</h1>
+            <p class="text-muted small mb-0">Complete your shipping and payment details to place your order.</p>
+        </div>
+    </header>
+
+    <div class="container pb-5">
+        <!-- Progress Stepper -->
+        <div class="checkout-stepper">
+            <div class="checkout-stepper-progress" id="stepper-progress-bar"></div>
+            
+            <div class="step-item active" id="step-node-1">
+                <div class="step-circle"><i class="bi bi-geo-alt" id="step-icon-1"></i></div>
+                <div class="step-label">1. Address</div>
+            </div>
+            
+            <div class="step-item" id="step-node-2">
+                <div class="step-circle"><i class="bi bi-credit-card" id="step-icon-2"></i></div>
+                <div class="step-label">2. Payment</div>
+            </div>
+            
+            <div class="step-item" id="step-node-3">
+                <div class="step-circle"><i class="bi bi-bag-check" id="step-icon-3"></i></div>
+                <div class="step-label">3. Review</div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Left Side: Interactive Checkout Steps -->
+            <div class="col-lg-8">
+
+                <!-- STEP 1: SHIPPING ADDRESS -->
+                <div class="checkout-step-pane" id="checkout-step-1">
+                    <div class="border p-4 rounded bg-white shadow-sm mb-4">
+                        <h4 class="h5 font-weight-bold text-uppercase letter-spacing-1 mb-4 pb-2 border-bottom">
+                            <i class="bi bi-house-door me-2"></i>Shipping Address
+                        </h4>
+                        
+                        <form id="shipping-address-form" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small text-uppercase font-weight-bold">Full Name *</label>
+                                    <input type="text" class="form-control form-control-trendcart shadow-none" id="addr-name" placeholder="Priya Patel" required>
+                                    <div class="invalid-feedback small">Please enter your full name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small text-uppercase font-weight-bold">Mobile Number *</label>
+                                    <input type="tel" class="form-control form-control-trendcart shadow-none" id="addr-mobile" placeholder="98765 43210" maxlength="10" required>
+                                    <div class="invalid-feedback small">Please enter a valid 10-digit mobile number.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small text-uppercase font-weight-bold">Email Address *</label>
+                                    <input type="email" class="form-control form-control-trendcart shadow-none" id="addr-email" placeholder="priya.patel@gmail.com" required>
+                                    <div class="invalid-feedback small">Please enter a valid email address.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small text-uppercase font-weight-bold">House / Flat / Building *</label>
+                                    <input type="text" class="form-control form-control-trendcart shadow-none" id="addr-house" placeholder="Flat No 402, Building A" required>
+                                    <div class="invalid-feedback small">Please enter house/flat details.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small text-uppercase font-weight-bold">Street / Area / Landmark *</label>
+                                    <input type="text" class="form-control form-control-trendcart shadow-none" id="addr-street" placeholder="C.G. Road, Navrangpura" required>
+                                    <div class="invalid-feedback small">Please enter street/area details.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label small text-uppercase font-weight-bold">City *</label>
+                                    <input type="text" class="form-control form-control-trendcart shadow-none" id="addr-city" placeholder="Ahmedabad" required>
+                                    <div class="invalid-feedback small">Please enter city.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label small text-uppercase font-weight-bold">State *</label>
+                                    <input type="text" class="form-control form-control-trendcart shadow-none" id="addr-state" placeholder="Gujarat" required>
+                                    <div class="invalid-feedback small">Please enter state.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label small text-uppercase font-weight-bold">Pincode *</label>
+                                    <input type="text" class="form-control form-control-trendcart shadow-none" id="addr-pincode" placeholder="380009" maxlength="6" required>
+                                    <div class="invalid-feedback small">Please enter a valid 6-digit pincode.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small text-uppercase font-weight-bold">Country *</label>
+                                    <select class="form-select form-control-trendcart shadow-none" id="addr-country" required>
+                                        <option value="India" selected>India</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 pt-3 border-top text-end">
+                                <button type="button" class="btn btn-trendcart py-3 px-4 text-uppercase font-weight-bold letter-spacing-1" id="goto-payment-btn">
+                                    Continue to Payment <i class="bi bi-arrow-right ms-2"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- STEP 2: PAYMENT METHOD -->
+                <div class="checkout-step-pane d-none" id="checkout-step-2">
+                    <div class="border p-4 rounded bg-white shadow-sm mb-4">
+                        <h4 class="h5 font-weight-bold text-uppercase letter-spacing-1 mb-4 pb-2 border-bottom">
+                            <i class="bi bi-wallet2 me-2"></i>Payment Method
+                        </h4>
+                        
+                        <!-- Option A: COD -->
+                        <div class="payment-option-card selected" id="opt-cod" data-method="COD">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="pay-cod" value="COD" checked>
+                                <label class="form-check-label font-weight-bold ms-2" for="pay-cod">
+                                    Cash on Delivery (COD)
+                                </label>
+                            </div>
+                            <p class="text-muted small mb-0 mt-2 ms-4">
+                                Pay easily with cash or UPI upon package delivery at your doorstep. No prepayment required.
+                            </p>
+                        </div>
+
+                        <!-- Option B: UPI -->
+                        <div class="payment-option-card" id="opt-upi" data-method="UPI">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="pay-upi" value="UPI">
+                                <label class="form-check-label font-weight-bold ms-2" for="pay-upi">
+                                    UPI (Google Pay / PhonePe / Paytm / BHIM)
+                                </label>
+                            </div>
+                            <div class="upi-details-pane mt-3 ms-4 d-none" id="upi-details-box">
+                                <label class="form-label small text-uppercase font-weight-bold">Virtual Payment Address (VPA / UPI ID) *</label>
+                                <input type="text" class="form-control form-control-trendcart shadow-none mb-2" id="upi-id-input" placeholder="example@upi or mobile@ybl">
+                                <div class="text-danger small d-none" id="upi-error-msg">Please enter a valid UPI ID format (e.g. username@upi).</div>
+                                <span class="badge bg-light text-dark border"><i class="bi bi-shield-check text-success me-1"></i> Demo Interface: Instant Verification</span>
+                            </div>
+                        </div>
+
+                        <!-- Option C: CARD -->
+                        <div class="payment-option-card" id="opt-card" data-method="CARD">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="pay-card" value="CARD">
+                                <label class="form-check-label font-weight-bold ms-2" for="pay-card">
+                                    Credit / Debit Card
+                                </label>
+                            </div>
+                            <div class="card-details-pane mt-3 ms-4 d-none" id="card-details-box">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <label class="form-label small text-uppercase font-weight-bold">Cardholder Name *</label>
+                                        <input type="text" class="form-control form-control-trendcart shadow-none" id="card-name-input" placeholder="Name on Card">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small text-uppercase font-weight-bold">Card Number *</label>
+                                        <input type="text" class="form-control form-control-trendcart shadow-none" id="card-num-input" placeholder="1234 5678 9012 3456" maxlength="19">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small text-uppercase font-weight-bold">Expiry Date *</label>
+                                        <input type="text" class="form-control form-control-trendcart shadow-none" id="card-exp-input" placeholder="MM/YY" maxlength="5">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small text-uppercase font-weight-bold">CVV *</label>
+                                        <input type="password" class="form-control form-control-trendcart shadow-none" id="card-cvv-input" placeholder="123" maxlength="4">
+                                    </div>
+                                </div>
+                                <div class="text-danger small d-none mt-2" id="card-error-msg">Please fill out all card details correctly.</div>
+                                <p class="text-muted small mt-2 mb-0"><i class="bi bi-info-circle me-1"></i> Demo environment: Card details are validated for demonstration only.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+                            <button type="button" class="btn btn-trendcart-outline py-2 px-3" id="back-to-addr-btn">
+                                <i class="bi bi-arrow-left me-2"></i> Back to Address
+                            </button>
+                            <button type="button" class="btn btn-trendcart py-3 px-4 text-uppercase font-weight-bold letter-spacing-1" id="goto-review-btn">
+                                Continue to Review <i class="bi bi-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3: ORDER REVIEW -->
+                <div class="checkout-step-pane d-none" id="checkout-step-3">
+                    <div class="border p-4 rounded bg-white shadow-sm mb-4">
+                        <h4 class="h5 font-weight-bold text-uppercase letter-spacing-1 mb-4 pb-2 border-bottom">
+                            <i class="bi bi-card-checklist me-2"></i>Review Your Order
+                        </h4>
+
+                        <!-- Address Summary Box -->
+                        <div class="p-3 border rounded mb-4 bg-light d-flex justify-content-between align-items-start">
+                            <div>
+                                <span class="badge bg-secondary text-uppercase small mb-2">Delivery Address</span>
+                                <h6 class="font-weight-bold mb-1" id="review-addr-name">-</h6>
+                                <p class="small text-muted mb-1" id="review-addr-text">-</p>
+                                <p class="small text-muted mb-0" id="review-addr-contact">-</p>
+                            </div>
+                            <button class="btn btn-sm btn-trendcart-outline py-1 px-3" id="edit-addr-btn">Edit</button>
+                        </div>
+
+                        <!-- Payment Summary Box -->
+                        <div class="p-3 border rounded mb-4 bg-light d-flex justify-content-between align-items-start">
+                            <div>
+                                <span class="badge bg-secondary text-uppercase small mb-2">Payment Method</span>
+                                <h6 class="font-weight-bold mb-0" id="review-pay-method">-</h6>
+                            </div>
+                            <button class="btn btn-sm btn-trendcart-outline py-1 px-3" id="edit-pay-btn">Edit</button>
+                        </div>
+
+                        <!-- Products List -->
+                        <h6 class="font-weight-bold text-uppercase small mb-3">Items in Order</h6>
+                        <div id="review-items-container" class="mb-4">
+                            <!-- Items populated dynamically -->
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+                            <button type="button" class="btn btn-trendcart-outline py-2 px-3" id="back-to-pay-btn">
+                                <i class="bi bi-arrow-left me-2"></i> Back to Payment
+                            </button>
+                            <button type="button" class="btn btn-trendcart py-3 px-5 text-uppercase font-weight-bold letter-spacing-1 fs-6" id="place-order-final-btn">
+                                Place Order <i class="bi bi-check-lg ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Side: Order Summary Sidebar -->
+            <div class="col-lg-4">
+                <div class="summary-card sticky-top" style="top: 100px;">
+                    <h5 class="font-heading font-weight-bold text-uppercase small letter-spacing-1 mb-3 border-bottom pb-2">
+                        Order Summary
+                    </h5>
+                    
+                    <div id="sidebar-cart-items" class="mb-3 border-bottom pb-3">
+                        <!-- Rendered dynamically -->
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2 small">
+                        <span class="text-muted">Subtotal:</span>
+                        <span class="font-weight-bold" id="summary-subtotal">₹0.00</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2 small">
+                        <span class="text-muted">Estimated Shipping:</span>
+                        <span class="font-weight-bold text-success" id="summary-shipping">FREE</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3 small">
+                        <span class="text-muted">Taxes & Charges:</span>
+                        <span class="font-weight-bold">Included</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between pt-3 border-top h5 font-weight-bold mb-4">
+                        <span>Total Amount:</span>
+                        <span class="text-accent" id="summary-total">₹0.00</span>
+                    </div>
+
+                    <div class="p-3 bg-light rounded text-center small text-muted">
+                        <i class="bi bi-shield-lock-fill text-success fs-5 d-block mb-1"></i>
+                        <span>100% Encrypted & Safe Checkout. Easy returns within 30 days.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-trendcart py-5 mt-auto">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-12 col-md-4">
+                    <a href="index.html" class="footer-brand d-block mb-3">TRENDCART</a>
+                    <p class="footer-text mb-4">Redefining modern wardrobe essentials with timeless design and sustainable craftsmanship.</p>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5 class="footer-heading">Collections</h5>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="products.html?category=women">Women's Collection</a></li>
+                        <li class="footer-link-item"><a href="products.html?category=men">Men's Apparel</a></li>
+                        <li class="footer-link-item"><a href="products.html?category=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5 class="footer-heading">Client Services</h5>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                        <li class="footer-link-item"><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="footer-text mb-3">Subscribe for exclusive preview access.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control newsletter-input shadow-none" placeholder="Email address" required>
+                            <button class="btn newsletter-btn" type="submit">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="border-top pt-4 text-center text-muted small">
+                <p class="mb-0">&copy; 2026 TRENDCART. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Config JS -->
+    <script src="js/config.js"></script>
+    <!-- Core JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

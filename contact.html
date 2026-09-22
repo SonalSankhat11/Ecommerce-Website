@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | TRENDCART</title>
+    <meta name="description" content="Reach out to the TRENDCART customer service team, request styling support, or read our sizing and delivery FAQs.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-trendcart">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-trendcart" href="index.html">TRENDCART</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="products.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-trendcart active" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="navbar-icons">
+                    <a href="dashboard.html" class="nav-icon-btn" title="View Wishlist">
+                        <i class="bi bi-heart"></i>
+                        <span class="nav-icon-badge wishlist-count-badge" style="display: none;">0</span>
+                    </a>
+                    <button class="nav-icon-btn" id="navbar-cart-btn" title="Open Bag">
+                        <i class="bi bi-bag"></i>
+                        <span class="nav-icon-badge cart-count-badge" style="display: none;">0</span>
+                    </button>
+                    <a href="auth.html" class="nav-icon-btn" id="navbar-user-btn" title="Sign In">
+                        <i class="bi bi-person"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Contact Us</h1>
+            <div class="page-breadcrumbs">
+                <a href="index.html">Home</a> / <span>Contact</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Contact & Info Section -->
+    <section class="py-5 my-lg-4">
+        <div class="container">
+            <div class="row g-5 align-items-stretch">
+                
+                <!-- Left Column: Details -->
+                <div class="col-lg-5 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="text-accent text-uppercase small letter-spacing-2 font-weight-bold d-block mb-3">Atelier Details</span>
+                        <h2 class="mb-4 display-6 text-uppercase font-weight-bold" style="line-height: 1.2;">Get In Touch</h2>
+                        <p class="text-muted mb-5">Have a question about our products, orders, shipping, returns, or sizing? Our support team is happy to help you with your TRENDcart shopping experience.</p>
+                        
+                        <div class="contact-info-box">
+                            <h4 class="contact-info-title">ATELIER ADDRESS</h4>
+                            <p class="contact-info-text mb-0">C.G. Road, Navrangpura,<br>Ahmedabad, Gujarat 380009, India</p>
+                        </div>
+                        <div class="contact-info-box">
+                            <h4 class="contact-info-title">Phone Hotline</h4>
+                            <p class="contact-info-text mb-0">+91 98765 43210</p>
+                        </div>
+                        <div class="contact-info-box">
+                            <h4 class="contact-info-title">General Inquiries</h4>
+                            <p class="contact-info-text mb-0">support@trendcart.com</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-light border-start border-3 border-accent mt-4">
+                        <p class="small text-muted mb-0"><strong>Press & Collaborations:</strong> For editorial features, wholesale inquiries, and collaborations, contact press@trendcart.com.</p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div class="col-lg-7">
+                    <div class="p-4 p-md-5 border bg-white h-100">
+                        <h3 class="h4 text-uppercase font-weight-bold mb-4 letter-spacing-1">Send a Message</h3>
+                        
+                        <form id="contact-form" novalidate>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="contact-name" class="form-label small text-uppercase font-weight-bold text-muted">Full Name</label>
+                                    <input type="text" class="form-control form-control-trendcart shadow-none" id="contact-name" placeholder="Priya Patel" required>
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contact-email" class="form-label small text-uppercase font-weight-bold text-muted">Email Address</label>
+                                    <input type="email" class="form-control form-control-trendcart shadow-none" id="contact-email" placeholder="priya.patel@gmail.com" required>
+                                    <div class="invalid-feedback">Please enter a valid email.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="contact-subject" class="form-label small text-uppercase font-weight-bold text-muted">Subject</label>
+                                <input type="text" class="form-control form-control-trendcart shadow-none" id="contact-subject" placeholder="Product Inquiry" required>
+                                <div class="invalid-feedback">Please specify a subject.</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="contact-message" class="form-label small text-uppercase font-weight-bold text-muted">Message</label>
+                                <textarea class="form-control form-control-trendcart shadow-none" id="contact-message" rows="5" placeholder="Hello, I would like to know more about your products and delivery options." required></textarea>
+                                <div class="invalid-feedback">Message must be at least 10 characters long.</div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-trendcart w-100 py-3">Send Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="py-5" style="background-color: var(--bg-light);" id="faq">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-accent text-uppercase small letter-spacing-2 font-weight-bold d-block mb-2">FAQ Desk</span>
+                <h2 class="display-6 text-uppercase mb-3 font-weight-bold">Common Queries</h2>
+                <div class="mx-auto" style="width: 50px; height: 1px; background-color: var(--accent-color);"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion faq-accordion" id="accordionFAQ">
+                        <!-- Q1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    What is the standard delivery timeline?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body">
+                                    Domestic shipments across India take 2–4 business days. Express shipping delivers within 24–48 hours. We provide tracking codes for all order phases.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Q2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    How does the Sustainable Exchange program function?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body">
+                                    Pack any worn, clean TRENDCART garment and send it to our Ahmedabad studio using our prepaid label. Our evaluation team will award up to 25% of the original purchase value as immediate store credit, while your garment is recycled or restored.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Q3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Are sizing fit adjustments custom-tailored?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body">
+                                    Yes. If you live in Ahmedabad, you can schedule an in-person alteration fitting. For online purchases, you can specify custom sleeve and leg lengths when placing items in your cart, executed by our atelier.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-trendcart">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-12">
+                    <h3 class="footer-logo">TRENDCART</h3>
+                    <p class="footer-subtitle">Providing curated slow fashion luxury collections for modern individuals. Focused on natural fabrics, conscious sourcing, and classic styles.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon-btn" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+                        <a href="#" class="social-icon-btn" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="index.html">Home</a></li>
+                        <li class="footer-link-item"><a href="products.html">Shop Catalog</a></li>
+                        <li class="footer-link-item"><a href="services.html">Services</a></li>
+                        <li class="footer-link-item"><a href="about.html">Our Story</a></li>
+                        <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h4 class="footer-title">Help Desk</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="contact.html#faq">FAQs</a></li>
+                        <li class="footer-link-item"><a href="#">Shipping & Deliveries</a></li>
+                        <li class="footer-link-item"><a href="#">Return Policy</a></li>
+                        <li class="footer-link-item"><a href="#">Sizing Guides</a></li>
+                        <li class="footer-link-item"><a href="#">Privacy Settings</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h4 class="footer-title">The Atelier</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><span class="text-muted">Office: C.G. Road, Navrangpura, Ahmedabad, Gujarat 380009</span></li>
+                        <li class="footer-link-item"><span class="text-muted">Hotline: +91 98765 43210</span></li>
+                        <li class="footer-link-item"><span class="text-muted">Email: support@trendcart.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright-text mb-0">&copy; 2026 TRENDCART India. All Rights Reserved.</p>
+                <div class="payment-gateways" title="Supported Payments">
+                    <i class="bi bi-credit-card-2-front" title="Card"></i>
+                    <i class="bi bi-wallet2" title="Apple Pay"></i>
+                    <i class="bi bi-paypal" title="PayPal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Cart Drawer Overlay -->
+    <div class="cart-drawer-overlay"></div>
+
+    <!-- Slide-out Cart Drawer Panel -->
+    <div class="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3 class="cart-drawer-title">Shopping Bag</h3>
+            <button class="cart-drawer-close" aria-label="Close cart drawer"><i class="bi bi-x"></i></button>
+        </div>
+        <div class="cart-drawer-body">
+            <div class="cart-drawer-list">
+                <!-- Rendered dynamically in main.js -->
+            </div>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-total-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">₹0.00</span>
+            </div>
+            <button class="btn btn-trendcart w-100 py-3" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 Bundle JS (Contains Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Config JS -->
+    <script src="js/config.js"></script>
+    <!-- Core JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

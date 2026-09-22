@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRENDCART | Curated Luxury E-Commerce</title>
+    <meta name="description" content="Discover TRENDCART, the ultimate shopping experience featuring curated, high-end collections for men and women. Timeless design, sustainable craftsmanship.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-trendcart">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-trendcart" href="index.html">TRENDCART</a>
+            
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-trendcart active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-trendcart" href="products.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-trendcart" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-trendcart" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-trendcart" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-icons">
+                    <!-- Wishlist Icon with count badge -->
+                    <a href="dashboard.html" class="nav-icon-btn" title="View Wishlist">
+                        <i class="bi bi-heart"></i>
+                        <span class="nav-icon-badge wishlist-count-badge" style="display: none;">0</span>
+                    </a>
+                    
+                    <!-- Shopping Cart Icon with badge -->
+                    <button class="nav-icon-btn" id="navbar-cart-btn" title="Open Bag">
+                        <i class="bi bi-bag"></i>
+                        <span class="nav-icon-badge cart-count-badge" style="display: none;">0</span>
+                    </button>
+                    
+                    <!-- Account Icon (Updates to checked state if logged in) -->
+                    <a href="auth.html" class="nav-icon-btn" id="navbar-user-btn" title="Sign In">
+                        <i class="bi bi-person"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slider Section -->
+    <header class="hero-slider">
+        <div class="hero-slider-item">
+            <div class="hero-bg" style="background-image: url('assets/images/hero.png');"></div>
+            <div class="hero-overlay"></div>
+            <div class="container h-100 d-flex align-items-center">
+                <div class="hero-content-wrapper animate-fade-in-up">
+                    <span class="hero-subtitle">Pre-Fall Autumn 2026</span>
+                    <h1 class="hero-title">Timeless Design.<br>Curated Collections.</h1>
+                    <p class="hero-description">Experience the elegance of minimalistic styles crafted for individuals who appreciate fine details and conscious quality.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="products.html?category=women" class="btn btn-trendcart px-4 py-3">Shop Women</a>
+                        <a href="products.html?category=men" class="btn btn-trendcart-outline px-4 py-3 border-white text-white">Shop Men</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Feature highlights (Under Hero) -->
+    <section class="py-5" style="background-color: var(--bg-white);">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="bi bi-truck"></i>
+                        </div>
+                        <h4 class="feature-card-title">Complimentary Delivery</h4>
+                        <p class="feature-card-text mb-0">Free standard shipping on all domestic orders over ₹1,999.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h4 class="feature-card-title">Secure Checkouts</h4>
+                        <p class="feature-card-text mb-0">We support fully encrypted payment channels and fraud prevention.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="bi bi-arrow-left-right"></i>
+                        </div>
+                        <h4 class="feature-card-title">Hassle-Free Returns</h4>
+                        <p class="feature-card-text mb-0">Return or exchange any unworn article within 30 days of purchase.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="bi bi-patch-check"></i>
+                        </div>
+                        <h4 class="feature-card-title">Artisan Quality</h4>
+                        <p class="feature-card-text mb-0">All products are sourced ethically under strict standard audits.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Split Banner Section -->
+    <section class="category-split-section container-fluid">
+        <div class="row g-0">
+            <div class="col-lg-6">
+                <div class="category-banner">
+                    <div class="category-image-bg" style="background-image: url('assets/images/cat_women.png');"></div>
+                    <div class="category-overlay"></div>
+                    <div class="category-content">
+                        <h2 class="category-title">WOMEN</h2>
+                        <a href="products.html?category=women" class="btn btn-trendcart-outline px-4 py-3 border-white text-white">Explore Autumn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="category-banner">
+                    <div class="category-image-bg" style="background-image: url('assets/images/cat_men.png');"></div>
+                    <div class="category-overlay"></div>
+                    <div class="category-content">
+                        <h2 class="category-title">MEN</h2>
+                        <a href="products.html?category=men" class="btn btn-trendcart-outline px-4 py-3 border-white text-white">Explore Heritage</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Overview Section -->
+    <section class="py-5 my-lg-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5">
+                    <span class="text-accent text-uppercase small letter-spacing-2 font-weight-bold d-block mb-3">Our Core Philosophy</span>
+                    <h2 class="mb-4 display-5 text-uppercase font-weight-bold" style="font-size: 2.5rem; line-height: 1.2;">Designed with intent. Crafted to last.</h2>
+                    <p class="text-muted mb-4">TRENDCART was established on the foundation of slow fashion. We design our clothes with minimalist lines and versatile cuts so you can dress them up or down across multiple seasons.</p>
+                    <p class="text-muted mb-5">We partner exclusively with family-owned mills in Italy and Japan, sourcing organic wool, flax linen, and double-weight silk that carry their own history.</p>
+                    <a href="about.html" class="btn btn-trendcart-outline py-3 px-4">Read Our Story</a>
+                </div>
+                <div class="col-lg-7">
+                    <div class="position-relative overflow-hidden" style="max-height: 500px; background-color: var(--bg-light);">
+                        <!-- Reusing category image to show brand style -->
+                        <img src="assets/images/cat_women.png" alt="Slow fashion workshop" class="w-100 img-fluid" style="object-fit: cover; filter: brightness(0.9);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Showcase -->
+    <section class="py-5" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-accent text-uppercase small letter-spacing-2 font-weight-bold d-block mb-2">Curated List</span>
+                <h2 class="display-6 text-uppercase mb-3 font-weight-bold">Seasonal Favorites</h2>
+                <div class="mx-auto" style="width: 50px; height: 1px; background-color: var(--accent-color);"></div>
+            </div>
+            
+            <div class="row g-4 justify-content-center" id="products-featured-grid">
+                <!-- Dynamically populated via script or hardcoded for speed. Let's hardcode 4 elements to load quickly on page start -->
+                
+                <!-- Card 1 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card" data-id="1">
+                        <div class="product-image-container">
+                            <span class="product-badge">Sale</span>
+                            <img src="assets/images/product_1.png" alt="Classic Beige Trench Coat" class="product-img">
+                            <div class="product-actions">
+                                <button class="product-action-btn wishlist-toggle-btn" data-id="1">
+                                    <i class="bi bi-heart"></i>
+                                </button>
+                                <button class="product-action-btn quick-view-btn" data-id="1">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="product-action-btn add-to-bag-btn" data-id="1">
+                                    <i class="bi bi-bag"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">women</div>
+                            <h4 class="product-title"><a href="#" class="quick-view-trigger" data-id="1">Classic Beige Trench Coat</a></h4>
+                            <div class="product-price-wrapper">
+                                <span class="product-price">₹19,600.00</span>
+                                <span class="product-old-price">₹23,600.00</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card" data-id="2">
+                        <div class="product-image-container">
+                            <img src="assets/images/product_2.png" alt="Charcoal Tailored Wool Blazer" class="product-img">
+                            <div class="product-actions">
+                                <button class="product-action-btn wishlist-toggle-btn" data-id="2">
+                                    <i class="bi bi-heart"></i>
+                                </button>
+                                <button class="product-action-btn quick-view-btn" data-id="2">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="product-action-btn add-to-bag-btn" data-id="2">
+                                    <i class="bi bi-bag"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">men</div>
+                            <h4 class="product-title"><a href="#" class="quick-view-trigger" data-id="2">Charcoal Tailored Wool Blazer</a></h4>
+                            <div class="product-price-wrapper">
+                                <span class="product-price">₹15,120.00</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card" data-id="3">
+                        <div class="product-image-container">
+                            <span class="product-badge">Sale</span>
+                            <img src="https://images.unsplash.com/photo-1614975058789-41316d0e2e9c?auto=format&fit=crop&w=600&q=80" alt="Aesthetic Cable Knit Sweater" class="product-img">
+                            <div class="product-actions">
+                                <button class="product-action-btn wishlist-toggle-btn" data-id="3">
+                                    <i class="bi bi-heart"></i>
+                                </button>
+                                <button class="product-action-btn quick-view-btn" data-id="3">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="product-action-btn add-to-bag-btn" data-id="3">
+                                    <i class="bi bi-bag"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">women</div>
+                            <h4 class="product-title"><a href="#" class="quick-view-trigger" data-id="3">Aesthetic Cable Knit Sweater</a></h4>
+                            <div class="product-price-wrapper">
+                                <span class="product-price">₹8,800.00</span>
+                                <span class="product-old-price">₹10,800.00</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card" data-id="7">
+                        <div class="product-image-container">
+                            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80" alt="Emerald Silk Midi Dress" class="product-img">
+                            <div class="product-actions">
+                                <button class="product-action-btn wishlist-toggle-btn" data-id="7">
+                                    <i class="bi bi-heart"></i>
+                                </button>
+                                <button class="product-action-btn quick-view-btn" data-id="7">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="product-action-btn add-to-bag-btn" data-id="7">
+                                    <i class="bi bi-bag"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">women</div>
+                            <h4 class="product-title"><a href="#" class="quick-view-trigger" data-id="7">Emerald Silk Midi Dress</a></h4>
+                            <div class="product-price-wrapper">
+                                <span class="product-price">₹20,800.00</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="products.html" class="btn btn-trendcart py-3 px-5">View All Styles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">2018</div>
+                        <div class="stat-label">Est. Year</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Organic Fiber</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">12k+</div>
+                        <div class="stat-label">Conscious Clients</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Boutique Partners</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 my-lg-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-accent text-uppercase small letter-spacing-2 font-weight-bold d-block mb-2">Testimonials</span>
+                <h2 class="display-6 text-uppercase mb-3 font-weight-bold">What Our Clients Say</h2>
+                <div class="mx-auto" style="width: 50px; height: 1px; background-color: var(--accent-color);"></div>
+            </div>
+            
+            <!-- Standard dynamic styled row representing testimonials -->
+            <div class="row g-4 mt-2 justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="testimonial-text">"The cut of the trench coat is absolutely divine. It fits like standard bespoke tailoring and holds its structure beautifully even in autumn winds."</p>
+                        <h4 class="testimonial-author">Riya Mehta</h4>
+                        <span class="testimonial-role">Mumbai, Maharashtra</span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <p class="testimonial-text">"Minimalist fashion done right. Sourcing wool-blend materials that are both lightweight and warm is rare. Trendcart blazers are now a daily staple."</p>
+                        <h4 class="testimonial-author">Dhruv Patel</h4>
+                        <span class="testimonial-role">Ahmedabad, Gujarat</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action (Newsletter) Section -->
+    <section class="newsletter-banner">
+        <div class="container position-relative z-2">
+            <h2 class="newsletter-title font-heading">Join the TRENDCART Club</h2>
+            <p class="newsletter-subtitle">Subscribe for collections notifications, styling tips, and private sale invitations.</p>
+            <div class="newsletter-form-wrapper">
+                <form class="newsletter-form">
+                    <div class="newsletter-input-group">
+                        <input type="email" class="newsletter-input" placeholder="Your Email Address" aria-label="Subscribe email" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-trendcart">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-12">
+                    <h3 class="footer-logo">TRENDCART</h3>
+                    <p class="footer-subtitle">Providing curated slow fashion luxury collections for modern individuals. Focused on natural fabrics, conscious sourcing, and classic styles.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon-btn" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+                        <a href="#" class="social-icon-btn" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="index.html">Home</a></li>
+                        <li class="footer-link-item"><a href="products.html">Shop Catalog</a></li>
+                        <li class="footer-link-item"><a href="services.html">Services</a></li>
+                        <li class="footer-link-item"><a href="about.html">Our Story</a></li>
+                        <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h4 class="footer-title">Help Desk</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="contact.html#faq">FAQs</a></li>
+                        <li class="footer-link-item"><a href="#">Shipping & Deliveries</a></li>
+                        <li class="footer-link-item"><a href="#">Return Policy</a></li>
+                        <li class="footer-link-item"><a href="#">Sizing Guides</a></li>
+                        <li class="footer-link-item"><a href="#">Privacy Settings</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h4 class="footer-title">The Atelier</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><span class="text-muted">Office: C.G. Road, Navrangpura, Ahmedabad, Gujarat 380009</span></li>
+                        <li class="footer-link-item"><span class="text-muted">Hotline: +91 98765 43210</span></li>
+                        <li class="footer-link-item"><span class="text-muted">Email: support@trendcart.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright-text mb-0">&copy; 2026 TRENDCART India. All Rights Reserved.</p>
+                <div class="payment-gateways" title="Supported Payments">
+                    <i class="bi bi-credit-card-2-front" title="Card"></i>
+                    <i class="bi bi-wallet2" title="Apple Pay"></i>
+                    <i class="bi bi-paypal" title="PayPal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Cart Drawer Overlay -->
+    <div class="cart-drawer-overlay"></div>
+
+    <!-- Slide-out Cart Drawer Panel -->
+    <div class="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3 class="cart-drawer-title">Shopping Bag</h3>
+            <button class="cart-drawer-close" aria-label="Close cart drawer"><i class="bi bi-x"></i></button>
+        </div>
+        <div class="cart-drawer-body">
+            <div class="cart-drawer-list">
+                <!-- Rendered dynamically in main.js -->
+            </div>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-total-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">₹0.00</span>
+            </div>
+            <button class="btn btn-trendcart w-100 py-3" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 Bundle JS (Contains Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Config JS -->
+    <script src="js/config.js"></script>
+    <!-- Core JS -->
+    <script src="js/main.js"></script>
+    <script>
+        // Bind Quick View handlers that are already rendered inside HTML
+        document.querySelectorAll(".quick-view-btn, .quick-view-trigger").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                openQuickView(btn.dataset.id);
+            });
+        });
+        document.querySelectorAll(".add-to-bag-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                CartState.add(btn.dataset.id);
+                toggleCartDrawer(true);
+            });
+        });
+        document.querySelectorAll(".wishlist-toggle-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                WishlistState.toggle(btn.dataset.id);
+            });
+        });
+    </script>
+</body>
+</html>

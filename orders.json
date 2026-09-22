@@ -1,0 +1,64 @@
+[
+  {
+    "id": "ORD-51583",
+    "date": "2026-08-22",
+    "total": 15120,
+    "subtotal": 15120,
+    "shippingFee": 0,
+    "status": "received",
+    "orderStatus": "Confirmed",
+    "paymentStatus": "Paid",
+    "paymentMethod": "UPI (sonusankhat011@oksbi)",
+    "shippingAddress": {
+      "fullName": "Sanvi",
+      "mobile": "9924531767",
+      "email": "sonusankhat011@gmail.com",
+      "house": "202",
+      "street": "s.g road",
+      "city": "mumbai",
+      "state": "maharastra",
+      "pincode": "400001",
+      "country": "India"
+    },
+    "items": [
+      {
+        "id": 2,
+        "title": "Charcoal Tailored Wool Blazer",
+        "quantity": 1,
+        "price": 15120,
+        "image": "assets/images/product_2.png",
+        "size": "S",
+        "color": "Charcoal"
+      }
+    ]
+  },
+  {
+    "id": "ORD-99999",
+    "date": "2026-08-22",
+    "total": 19600,
+    "subtotal": 19600,
+    "shippingFee": 0,
+    "status": "received",
+    "orderStatus": "Confirmed",
+    "paymentStatus": "Pending / Cash on Delivery",
+    "paymentMethod": "Cash on Delivery",
+    "shippingAddress": {
+      "fullName": "Priya Patel",
+      "mobile": "9876543210",
+      "email": "priya.patel@gmail.com",
+      "house": "101",
+      "street": "MG Road",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400001",
+      "country": "India"
+    },
+    "items": [
+      {
+        "title": "Classic Beige Trench Coat",
+        "quantity": 1,
+        "price": 19600
+      }
+    ]
+  }
+]
